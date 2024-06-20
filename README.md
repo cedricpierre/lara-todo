@@ -2,7 +2,13 @@
 
 This project uses Laravel Sail.
 
-After installation and configuration of the .env file, run `vendor/bin/sail up -d` and navigate to the localhost address.
+After installation with `composer install` and configuration of the .env file, run `vendor/bin/sail up -d`.
+
+Run the migrations
+
+`vendor/bin/sail artisan migrate:fresh --seed`
+
+You can now use the API.
 
 Here are the routes.
 
