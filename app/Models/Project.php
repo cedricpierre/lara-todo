@@ -9,6 +9,10 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name'
+    ];
+
     function todos()
     {
         return $this->hasMany(Todo::class);

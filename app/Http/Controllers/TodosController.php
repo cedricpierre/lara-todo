@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateTodoRequest;
 use App\Http\Requests\UpdateTodoRequest;
-use App\Http\Resources\ProjectResource;
 use App\Http\Resources\TodoResource;
-use App\Models\Project;
 use App\Models\Todo;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class TodosController extends Controller
@@ -37,8 +34,8 @@ class TodosController extends Controller
      */
     public function show(Todo $todo): TodoResource
     {
-        $todo->with('project');
-
+        $todo->load('project');
+        $todo->newQuery()->increment('total_views',1);
         return new TodoResource($todo);
     }
 

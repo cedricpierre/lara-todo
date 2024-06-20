@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->boolean('is_done')->default(false);
             $table->foreignId('project_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->nullable();
             $table->integer('total_views')->default(0);
             $table->timestamps();
         });

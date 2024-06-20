@@ -10,6 +10,14 @@ class Todo extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'is_done',
+        'project_id',
+        'user_id',
+    ];
+
     /**
      * @return BelongsTo
      */
