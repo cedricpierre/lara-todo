@@ -34,7 +34,7 @@ class TodosController extends Controller
      */
     public function show(Todo $todo): TodoResource
     {
-        $todo->load('project');
+        $todo->load(['project','user']);
         $todo->newQuery()->increment('total_views',1);
         return new TodoResource($todo);
     }
