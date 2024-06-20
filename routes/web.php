@@ -4,6 +4,9 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TodosController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('project', [ProjectsController::class, 'index'])->name('project.index');
 
