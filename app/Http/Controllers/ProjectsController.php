@@ -15,7 +15,7 @@ class ProjectsController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        return ProjectResource::collection(Project::all());
+        return ProjectResource::collection(Project::with(['todos'])->get());
     }
 
     /**
