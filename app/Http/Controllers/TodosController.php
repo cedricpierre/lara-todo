@@ -37,7 +37,7 @@ class TodosController extends Controller
      */
     public function show(Todo $todo): TodoResource
     {
-        $todo->load('project');
+        $todo->with('project');
 
         return new TodoResource($todo);
     }
