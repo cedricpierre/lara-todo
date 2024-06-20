@@ -48,4 +48,13 @@ class TodosController extends Controller
     {
         return $todo->update($request->all());
     }
+
+    /**
+     * @param Todo $todo
+     * @return int
+     */
+    public function destroy(Todo $todo): int
+    {
+        return $todo->delete();
+    }
 }
