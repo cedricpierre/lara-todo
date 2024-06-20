@@ -15,7 +15,7 @@ class TodosController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        return TodoResource::collection(Todo::all());
+        return TodoResource::collection(Todo::with(['project','user'])->get());
     }
 
     /**
